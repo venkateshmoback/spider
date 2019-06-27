@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+     <meta charset="UTF-8">
+     <link rel="stylesheet" href="media/style.css">
+      <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+      <title>Moback Technologies India Private Ltd</title>
+   </head>
+   <body>
+   		
+	   <h1><div class ='logo'>
+        <img src = 'media/logo.png'/>
+      </div>  
+Moback Technologies India Private Ltd
+
+<a href="">Back</a>
+</h1>	
+	   
+      
+       <div class="search-box">
+
+          <form action="." method="POST">
+              {% csrf_token %}
+              <input type="text" name='input' class="search-txt" placeholder="Type to search"/>
+       		<button type="submit">
+       	   	<i class="fas fa-search"></i>
+       		</button>
+         </form>
+
+       </div>
+
+       <center>
+       <table>
+       		<tr><th>Company Name</th><th>Career page</th></tr>
+          {% for key, value in Company.items %}
+           <tr>
+                <td> {{ key }} </td>
+                <td> {{ value }} </td>
+           </tr>
+          {% endfor %}
+          <!--
+          <tr>{% for name in Company %}<td>{{ name }}</td>{% endfor %}</tr>
+          <tr>{% for url in link %}<td>{{ url }}</td>{% endfor %}</tr>		  
+          -->
+       </table>
+   </body>
+</html>
